@@ -1,4 +1,4 @@
-import { tebaklirik } from '@bochilteam/scraper'
+import fetch from 'node-fetch'
 
 let timeout = 120000
 let poin = 4999
@@ -10,8 +10,7 @@ let handler = async (m, { conn, usedPrefix }) => {
         conn.sendButton(m.chat, 'Masih ada soal belum terjawab di chat ini', author, null, buttons, conn.tebaklirik[id][0])
         throw false
     }
-    //let json = src[Math.floor(Math.random() * src.length)]
-    let json = await tebaklirik()
+    let json = pickRandom(src)
     let caption = `
 Soal: ${json.soal}
 
@@ -35,6 +34,10 @@ handler.tags = ['game']
 handler.command = /^tebaklirik/i
 
 export default handler
+
+function pickRandom(list) {
+  return list[Math.floor(list.length * Math.random())]
+}
 
 const buttons = [
     ['Bantuan', '/hint'],

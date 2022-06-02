@@ -6,7 +6,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     conn.siapakahaku = conn.siapakahaku ? conn.siapakahaku : {}
     let id = m.chat
     if (id in conn.siapakahaku) {
-        conn.reply(m.chat, 'Masih ada soal belum terjawab di chat ini', conn.siapakahaku[id][0])
+        conn.sendButton(m.chat, 'Masih ada soal belum terjawab di chat ini', author, null, buttons, conn.siapakahaku[id][0])
         throw false
     }
     const json = await siapakahaku()
@@ -18,7 +18,7 @@ Ketik ${usedPrefix}who untuk bantuan
 Bonus: ${poin} XP
 `.trim()
     conn.siapakahaku[id] = [
-        await conn.sendButton(m.chat, caption, author, ['Bantuan', `${usedPrefix}who`], m),
+        await conn.sendButton(m.chat, caption, author, buttons, m),
         json, poin,
         setTimeout(() => {
             if (conn.siapakahaku[id]) conn.sendButton(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, author, ['Main Lagi', '/siapakahaku'], conn.siapakahaku[id][0])
@@ -31,3 +31,8 @@ handler.tags = ['game']
 handler.command = /^siapa(kah)?aku/i
 
 export default handler
+
+const buttons = [
+    ['Bantuan', '/hint'],
+    ['Menyerah', 'menyerah']
+]
