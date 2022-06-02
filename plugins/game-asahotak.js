@@ -1,16 +1,17 @@
-import fetch from 'node-fetch'
+import { asahotak } from '@bochilteam/scraper'
 
 let timeout = 120000
 let poin = 4999
 let handler = async (m, { conn, usedPrefix }) => {
-	let src = await (await fetch('https://raw.githubusercontent.com/BochilTeam/database/master/games/asahotak.json').json()
+	//let src = await (await fetch('https://raw.githubusercontent.com/BochilTeam/database/master/games/asahotak.json').json()
     conn.asahotak = conn.asahotak ? conn.asahotak : {}
     let id = m.chat
     if (id in conn.asahotak) {
         conn.sendButton(m.chat, 'Masih ada soal belum terjawab di chat ini', author, null, buttons, conn.asahotak[id][0])
         throw false
     }
-    let json = src[Math.floor(Math.random() * src.length)]
+    //let json = src[Math.floor(Math.random() * src.length)]
+    let json = await asahotak()
     let caption = `
 Soal: ${json.soal}
 

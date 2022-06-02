@@ -8,7 +8,8 @@ let handler = async (m, { conn, usedPrefix }) => {
     if (id in conn.caklontong) return conn.reply(m.chat, 'Masih ada soal belum terjawab di chat ini', conn.caklontong[id][0])
     let json = await caklontong()
     let caption = `
-${json.soal}
+Soal: ${json.soal}
+
 Timeout *${(timeout / 1000).toFixed(2)} detik*
 Ketik ${usedPrefix}calo untuk bantuan
 Bonus: ${poin} XP

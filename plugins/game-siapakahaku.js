@@ -11,7 +11,8 @@ let handler = async (m, { conn, usedPrefix }) => {
     }
     const json = await siapakahaku()
     let caption = `
-Siapakah aku? ${json.soal}
+Soal: ${json.soal}
+
 Timeout *${(timeout / 1000).toFixed(2)} detik*
 Ketik ${usedPrefix}who untuk bantuan
 Bonus: ${poin} XP

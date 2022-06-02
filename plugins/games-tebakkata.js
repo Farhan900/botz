@@ -11,7 +11,8 @@ let handler = async (m, { conn, usedPrefix }) => {
     }
     const json = await tebakkata()
     let caption = `
-${json.soal}
+Soal: ${json.soal}
+
 Timeout *${(timeout / 1000).toFixed(2)} detik*
 Ketik ${usedPrefix}teka untuk bantuan
 Bonus: ${poin} XP

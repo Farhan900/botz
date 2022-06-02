@@ -1,4 +1,4 @@
-import fetch from 'node-fetch'
+import { tebakkabupaten } from '@bochilteam/scraper'
 
 let timeout = 120000
 let poin = 4999
@@ -10,7 +10,8 @@ let handler = async (m, { conn, usedPrefix }) => {
         conn.sendButton(m.chat, 'Masih ada soal belum terjawab di chat ini', author, null, buttons, conn.tebakkabupaten[id][0])
         throw false
     }
-    let json = src[Math.floor(Math.random() * src.length)]
+    //let json = src[Math.floor(Math.random() * src.length)]
+    let json = await tebakkabupaten()
     let caption = `
 Timeout *${(timeout / 1000).toFixed(2)} detik*
 Ketik ${usedPrefix}hint untuk hint

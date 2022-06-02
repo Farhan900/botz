@@ -1,9 +1,9 @@
-import fetch from 'node-fetch'
+import { susunkata } from '@bochilteam/scraper'
 
 let timeout = 120000
 let poin = 4999
 let handler = async (m, { conn, usedPrefix }) => {
-	let src = await (await fetch('https://raw.githubusercontent.com/BochilTeam/database/master/games/susunkata.json').json()
+	//let src = await (await fetch('https://raw.githubusercontent.com/BochilTeam/database/master/games/susunkata.json').json()
     conn.susunkata = conn.susunkata ? conn.susunkata : {}
     let id = m.chat
     if (id in conn.susunkata) {

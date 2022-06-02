@@ -1,16 +1,17 @@
-import fetch from 'node-fetch'
+import { tebaktebakan } from '@bochilteam/scraper'
 
 let timeout = 120000
 let poin = 4999
 let handler = async (m, { conn, usedPrefix }) => {
-	let src = await (await fetch('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebaktebakan.json').json()
+	//let src = await (await fetch('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebaktebakan.json').json()
     conn.tebaktebakan = conn.tebaktebakan ? conn.tebaktebakan : {}
     let id = m.chat
     if (id in conn.tebaktebakan) {
         conn.sendButton(m.chat, 'Masih ada soal belum terjawab di chat ini', author, null, buttons, conn.tebaktebakan[id][0])
         throw false
     }
-    let json = src[Math.floor(Math.random() * src.length)]
+    //let json = src[Math.floor(Math.random() * src.length)]
+    let json = await tebaktebakan()
     let caption = `
 Soal: ${json.soal}
 
