@@ -2,7 +2,7 @@ let handler = async(m, { conn }) => {
 	conn.sendButton(m.chat, '*TRUTH*\n\n' + pickRandom(truth), author, [['Tantangan', '/dare'], ['Kejujuran', '/truth']], m)
 }
 handler.help = ['truth']
-handler.tags = ['fun']
+handler.tags = ['fun', 'quotes']
 
 handler.command = /^truth$/i
 handler.limit = true
