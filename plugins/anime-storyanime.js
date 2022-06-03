@@ -2,7 +2,7 @@ let handler = async(m, { conn }) => {
 	conn.sendButton(m.chat, author, author, pickRandom(story), ['Get again', '/storyanime'], m)
 }
 handler.help = ['storyanime']
-handler.tags = ['anime']
+handler.tags = ['internet']
 
 handler.command = /^storyanime$/i
 handler.limit = true
