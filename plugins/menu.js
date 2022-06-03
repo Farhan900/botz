@@ -9,6 +9,7 @@ let tags = {
   'sticker': 'Sticker',
   'kerang': 'Kerang Ajaib',
   'quotes': 'Quotes',
+  'image': 'Image',
   'group': 'Group',
   'premium': 'Premium',
   'internet': 'Internet',
@@ -42,6 +43,8 @@ const defaultMenu = {
 
 📈 Uptime: *%uptime (%muptime)*
 📊 Database: %rtotalreg of %totalreg
+
+🌐 Website: jayaganz-api.herokuapp.com
 
 Untuk melihat menu
 Silakan klik baca selengkapnya
