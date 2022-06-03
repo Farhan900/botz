@@ -3,7 +3,7 @@ let handler = async(m, { conn }) => {
 	conn.sendButton(m.chat, '*Truth Or Dare*', author, img, [['Truth', '/truth'], ['Dare', '/dare']], m)
 }
 handler.help = ['tod', 'truthordare']
-handler.tags = ['fun']
+handler.tags = ['fun', 'quotes']
 
 handler.command = /^(tod|truthordare)$/i
 handler.limit = true
