@@ -28,7 +28,7 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
   if (!isY && !isLimit) await conn.sendFile(m.chat, thumbnail, 'thumbnail.jpg', `
 *📌Title:* ${title}
 *📊 Filesize:* ${audio.fileSizeH}
-*${isLimit ? 'Pakai ' : ''}Link:* ${await shortlink(link)}
+*${isLimit ? 'Pakai ' : ''}Link:* ${link}
 `.trim(), m)
   if (!isLimit) await conn.sendFile(m.chat, source, title + '.mp3', `
 *📌Title:* ${title}
@@ -44,8 +44,3 @@ handler.command = /^yt(a|mp3)$/i
 handler.exp = 0
 
 export default handler
-
-async function shortlink(url) {
-isurl = /https?:\/\//.test(url)
-return isurl ? (await require('axios').get('https://tinyurl.com/api-create.php?url='+encodeURIComponent(url))).data : ''
-}
