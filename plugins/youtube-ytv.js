@@ -27,7 +27,7 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
   if ((!(source instanceof ArrayBuffer) || !link || !res.ok) && !isLimit) throw 'Error: ' + (lastError || 'Can\'t download video')
   if (!isY && !isLimit) await conn.sendFile(m.chat, thumbnail, 'thumbnail.jpg', `
 *📌Title:* ${title}
-*🗎 Filesize:* ${video.fileSizeH}
+*📊 Filesize:* ${video.fileSizeH}
 *${isLimit ? 'Pakai ' : ''}Link:* ${link}
 `.trim(), m)
   let _thumb = {}
@@ -35,7 +35,7 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
   catch (e) { }
   if (!isLimit) await conn.sendFile(m.chat, link, title + '.mp4', `
 *📌Title:* ${title}
-*🗎 Filesize:* ${video.fileSizeH}
+*📊 Filesize:* ${video.fileSizeH}
 `.trim(), m, false, {
     ..._thumb,
     asDocument: chat.useDocument
