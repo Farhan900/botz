@@ -17,4 +17,4 @@ handler.tags = ['anonymous']
 handler.command = /^(sendkontak)$/i
 handler.private = true
 
-module.exports = handler
+export default handler
