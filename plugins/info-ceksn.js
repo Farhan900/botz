@@ -14,7 +14,7 @@ _Bintangi SN agar dapat melakukan penghapusan pendaftaran_
 }
 
 handler.help = ['ceksn']
-handler.tags = ['exp']
+handler.tags = ['xp']
 
 handler.command = /^(ceksn)$/i
 handler.register = true

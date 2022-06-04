@@ -27,7 +27,7 @@ _Jika SN atau pesan ini terhapus gunakan ${usedPrefix}sn untuk mengecek SN_
 `.trim())
 }
 handler.help = ['daftar', 'reg', 'register'].map(v => v + ' <nama>.<umur>')
-handler.tags = ['exp']
+handler.tags = ['xp']
 
 handler.command = /^(daftar|reg(ister)?)$/i
 
