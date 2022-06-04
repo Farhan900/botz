@@ -5,7 +5,7 @@ handler.help = ['dadu']
 handler.tags = ['sticker', 'fun']
 handler.command = /^dadu$/i
 
-module.exports = handler
+export default handler
 
 function pickRandom(list) {
   return list[Math.floor(list.length * Math.random())]
