@@ -3,7 +3,7 @@ import chalk from 'chalk'
 import { fileURLToPath } from 'url'
 
 global.owner = [
-  ['6289524664142', 'Jaya'],
+  ['6289524664142', 'Jaya', true],
   ['62895323263219', 'Ryan'],
   ['12053866602', 'Gulfi', true]
   // [number, dia creator/owner?, dia developer?]
@@ -15,16 +15,18 @@ global.APIs = { // API Prefix
   nrtm: 'https://nurutomo.herokuapp.com',
   bg: 'http://bochil.ddns.net',
   xteam: 'https://api.xteam.xyz',
-  zahir: 'https://zahirr-web.herokuapp.com'
+  zahir: 'https://zahirr-web.herokuapp.com',
+  zenz: 'https://zenzapis.xyz'
 }
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
   'https://api.xteam.xyz': '5c6d619139643153',
-  'https://zahirr-web.herokuapp.com': 'zahirgans'
+  'https://zahirr-web.herokuapp.com': 'zahirgans',
+  'https://zenzapis.xyz': '01a0d20fe0'
 }
 
 // Sticker WM
-global.packname = 'HurvyBot-Md'
+global.packname = 'HurvyBotz-Md'
 global.author = 'Powered By Hurvybotz'
 
 global.multiplier = 69 // The higher, The harder levelup
