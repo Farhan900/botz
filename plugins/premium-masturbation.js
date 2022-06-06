@@ -2,10 +2,10 @@ let handler = async(m, { conn }) => {
 	conn.sendButton(m.chat, 'Janji gk dipake buat ngomcok ya :)', author, pickRandom(mastur), ['Get again', '/masturbation'], m)
 }
 handler.help = ['masturbation']
-handler.tags = ['image']
+handler.tags = ['premium']
 
 handler.command = /^masturbation$/i
-handler.private = true
+handler.premium = true
 
 export default handler
 
