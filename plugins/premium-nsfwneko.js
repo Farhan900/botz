@@ -2,10 +2,10 @@ let handler = async(m, { conn }) => {
 	conn.sendButton(m.chat, 'Jangan dipake buat coli ya om :)', author, pickRandom(nsfw), ['Get again', '/nsfwneko'], m)
 }
 handler.help = ['nsfwneko']
-handler.tags = ['image']
+handler.tags = ['premium']
 
 handler.command = /^nsfwneko$/i
-handler.private = true
+handler.premium = true
 
 export default handler
 
