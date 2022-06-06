@@ -65,14 +65,14 @@ let handler = (m, { conn, usedPrefix, command, text }) => {
     }
     conn.deleteMessage(chat, { fromMe, id, remoteJid: chat })
   } else {
-    randMusuh = [
+    const randMusuh = [
       ["🥷", "-", "-", "-", "-"],
       ["-", "🥷", "-", "-", "-"],
       ["-", "-", "🥷", "-", "-"],
       ["-", "-", "-", "🥷", "-"],
       ["-", "-", "-", "-", "🥷"]
     ]
-    randAku = [
+    const randAku = [
       ["🤠", "-", "-", "-", "-"],
       ["-", "🤠", "-", "-", "-"],
       ["-", "-", "🤠", "-", "-"],

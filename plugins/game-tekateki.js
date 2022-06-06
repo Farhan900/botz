@@ -3,40 +3,31 @@ import { tekateki } from '@bochilteam/scraper'
 let timeout = 120000
 let poin = 4999
 let handler = async (m, { conn, usedPrefix }) => {
-	//let src = await (await fetch('https://raw.githubusercontent.com/BochilTeam/database/master/games/tekateki.json').json()
     conn.tekateki = conn.tekateki ? conn.tekateki : {}
     let id = m.chat
     if (id in conn.tekateki) {
-        conn.sendButton(m.chat, 'Masih ada soal belum terjawab di chat ini', author, null, buttons, conn.tekateki[id][0])
+        conn.reply(m.chat, 'Masih ada soal belum terjawab di chat ini', conn.tekateki[id][0])
         throw false
     }
-    //let json = src[Math.floor(Math.random() * src.length)]
-    let json = await tekateki()
+    const json = await tekateki()
     let caption = `
-Soal: ${json.soal}
+${json.soal}
 
 Timeout *${(timeout / 1000).toFixed(2)} detik*
-Ketik ${usedPrefix}hint untuk hint
+Ketik ${usedPrefix}hint untuk bantuan
 Bonus: ${poin} XP
-    `.trim()
+`.trim()
     conn.tekateki[id] = [
-        await conn.sendButton(m.chat, caption, author, buttons, m),
+        await conn.sendButton(m.chat, caption, author, ['Bantuan', `${usedPrefix}hint`], m),
         json, poin,
         setTimeout(() => {
-            if (conn.tekateki[id]) conn.sendButton(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, author, null, [
-                ['Main Lagi', '/tekateki']
-            ], conn.tekateki[id][0])
+            if (conn.tekateki[id]) conn.sendButton(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, author, ['tekateki', '/tekateki'], conn.tekateki[id][0])
             delete conn.tekateki[id]
         }, timeout)
     ]
 }
 handler.help = ['tekateki']
 handler.tags = ['game']
-handler.command = /^tekateki/i
+handler.command = /^tekateki$/i
 
 export default handler
-
-const buttons = [
-    ['Bantuan', '/hint'],
-    ['Menyerah', 'menyerah']
-]

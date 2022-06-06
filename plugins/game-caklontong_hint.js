@@ -3,9 +3,9 @@ let handler = async (m, { conn }) => {
     let id = m.chat
     if (!(id in conn.caklontong)) throw false
     let json = conn.caklontong[id][1]
-    conn.sendButton(m.chat, '```' + json.jawaban.replace(/[bcdfghjklmnpqrstvwxyz]/ig, '_') + '```', author, null, [
-        ['Nyerah', 'menyerah']
-    ], m)
+    let ans = json.jawaban
+    let clue = ans.replace(/[bcdfghjklmnpqrstvwxyz]/ig, '_')
+    m.reply('```' + clue + '```')
 }
 handler.command = /^hint$/i
 

@@ -3,9 +3,9 @@ let handler = async (m, { conn }) => {
     let id = m.chat
     if (!(id in conn.tebakkimia)) throw false
     let json = conn.tebakkimia[id][1]
-    conn.sendButton(m.chat, '```' + json.unsur.replace(/[bcdfghjklmnpqrstvwxyz]/ig, '_') + '```', author, null, [
-        ['Nyerah', 'menyerah']
-    ], m)
+    let ans = json.unsur
+    let clue = ans.replace(/[bcdfghjklmnpqrstvwxyz]/ig, '_')
+    m.reply('```' + clue + '```')
 }
 handler.command = /^hint$/i
 

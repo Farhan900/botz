@@ -3,40 +3,31 @@ import { asahotak } from '@bochilteam/scraper'
 let timeout = 120000
 let poin = 4999
 let handler = async (m, { conn, usedPrefix }) => {
-	//let src = await (await fetch('https://raw.githubusercontent.com/BochilTeam/database/master/games/asahotak.json').json()
     conn.asahotak = conn.asahotak ? conn.asahotak : {}
     let id = m.chat
     if (id in conn.asahotak) {
-        conn.sendButton(m.chat, 'Masih ada soal belum terjawab di chat ini', author, null, buttons, conn.asahotak[id][0])
+        conn.reply(m.chat, 'Masih ada soal belum terjawab di chat ini', conn.asahotak[id][0])
         throw false
     }
-    //let json = src[Math.floor(Math.random() * src.length)]
-    let json = await asahotak()
+    const json = await asahotak()
     let caption = `
-Soal: ${json.soal}
+${json.soal}
 
 Timeout *${(timeout / 1000).toFixed(2)} detik*
-Ketik ${usedPrefix}hint untuk hint
+Ketik ${usedPrefix}hint untuk bantuan
 Bonus: ${poin} XP
-    `.trim()
+`.trim()
     conn.asahotak[id] = [
-        await conn.sendButton(m.chat, caption, author, buttons, m),
+        await conn.sendButton(m.chat, caption, author, ['Bantuan', `${usedPrefix}hint`], m),
         json, poin,
         setTimeout(() => {
-            if (conn.asahotak[id]) conn.sendButton(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, author, null, [
-                ['Main Lagi', '/asahotak']
-            ], conn.asahotak[id][0])
+            if (conn.asahotak[id]) conn.sendButton(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, author, ['Asahotak', '/asahotak'], conn.asahotak[id][0])
             delete conn.asahotak[id]
         }, timeout)
     ]
 }
 handler.help = ['asahotak']
 handler.tags = ['game']
-handler.command = /^asahotak/i
+handler.command = /^asahotak$/i
 
 export default handler
-
-const buttons = [
-    ['Bantuan', '/hint'],
-    ['Menyerah', 'menyerah']
-]

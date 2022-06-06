@@ -3,38 +3,29 @@ import { tebakkabupaten } from '@bochilteam/scraper'
 let timeout = 120000
 let poin = 4999
 let handler = async (m, { conn, usedPrefix }) => {
-	let src = await (await fetch('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakkabupaten.json').json()
     conn.tebakkabupaten = conn.tebakkabupaten ? conn.tebakkabupaten : {}
     let id = m.chat
     if (id in conn.tebakkabupaten) {
-        conn.sendButton(m.chat, 'Masih ada soal belum terjawab di chat ini', author, null, buttons, conn.tebakkabupaten[id][0])
+        conn.reply(m.chat, 'Masih ada soal belum terjawab di chat ini', conn.tebakkabupaten[id][0])
         throw false
     }
-    //let json = src[Math.floor(Math.random() * src.length)]
-    let json = await tebakkabupaten()
+    const json = await tebakkabupaten()
     let caption = `
 Timeout *${(timeout / 1000).toFixed(2)} detik*
-Ketik ${usedPrefix}hint untuk hint
+Ketik ${usedPrefix}hint untuk bantuan
 Bonus: ${poin} XP
-    `.trim()
+`.trim()
     conn.tebakkabupaten[id] = [
-        await conn.sendButton(m.chat, caption, author, json.url, buttons, m),
+        await conn.sendButton(m.chat, caption, author, json.url, ['Bantuan', `${usedPrefix}hint`], m),
         json, poin,
         setTimeout(() => {
-            if (conn.tebakkabupaten[id]) conn.sendButton(m.chat, `Waktu habis!\nJawabannya adalah *${json.title}*`, author, null, [
-                ['Main Lagi', '/tebakkabupaten']
-            ], conn.tebakkabupaten[id][0])
+            if (conn.tebakkabupaten[id]) conn.sendButton(m.chat, `Waktu habis!\nJawabannya adalah *${json.title}*`, author, ['Tebak Kabupaten', '/tebakkabupaten'], conn.tebakkabupaten[id][0])
             delete conn.tebakkabupaten[id]
         }, timeout)
     ]
 }
 handler.help = ['tebakkabupaten']
 handler.tags = ['game']
-handler.command = /^tebakkabupaten/i
+handler.command = /^tebakkabupaten$/i
 
 export default handler
-
-const buttons = [
-    ['Bantuan', '/hint'],
-    ['Menyerah', 'menyerah']
-]
