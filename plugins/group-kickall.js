@@ -10,7 +10,7 @@ let handler = async (m, { conn }) => {
   }
 }
 handler.help = ['kickall']
-handler.tags = ['admin']
+handler.tags = ['group']
 handler.command = /^(kickall)$/i
 handler.owner = false
 handler.group = true
