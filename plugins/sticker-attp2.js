@@ -1,18 +1,11 @@
 import uploadImage from '../lib/uploadImage.js'
 import fetch from 'node-fetch'
 import { sticker } from '../lib/sticker.js'
-import { MessageType } from '@adiwajshing/baileys'
 
 let handler = async (m, { conn, text }) => {
   try {
     let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text
-    let url = await fetch(global.API('https://salism3api.pythonanywhere.com', '/text2gif/', { text: teks }))
-    res = await url.json()
-    stick = res.image
-    let stiker = await sticker(null, stick, global.packname, global.author)
-    conn.sendMessage(m.chat, stiker, MessageType.sticker, {
-      quoted: m
-    })
+    conn.sendFile(m.chat, `https://api.lolhuman.xyz/api/attp2?apikey=71a53fd9c8ab7600c556436e&text=${teks}`, 'attp2.webp', '', m, false, { asSticker: true })
   } catch (e) {
     m.reply('Conversion Failed')
     throw false
