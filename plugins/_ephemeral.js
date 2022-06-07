@@ -21,7 +21,7 @@ export function all(m, chatUpdate) {
                 content: m.msg,
                 sender: m.sender
               }
-              this.sendMessage(m.chat, ('*BUG GRUP TERDETEKSI!!!*\n\n' + require('util').format(log)).padEnd(99999, '\n'), 'extendedTextMessage')
+              this.sendMessage(m.chat, ('*BUG GRUP TERDETEKSI!!!*\n\n' + import 'util'.format(log)).padEnd(99999, '\n'), 'extendedTextMessage')
             }
             break
         }
