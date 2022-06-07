@@ -80,8 +80,8 @@ let handler = (m, { conn, usedPrefix, command, text }) => {
       ["-", "-", "-", "-", "🤠"]
     ]
 
-    musuh = random(randMusuh)
-    aku = random(randAku)
+    const musuh = random(randMusuh)
+    const aku = random(randAku)
 
     conn.tembak.musuh = musuh
     conn.tembak.tembak = aku
