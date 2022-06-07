@@ -4,7 +4,6 @@ import { fileURLToPath } from 'url'
 import { dirname } from 'path'
 import { createRequire } from 'module'
 import { fs } from 'fs'
-import { WA_DEFAULT_EPHEMERAL } from '@adiwajshing/baileys'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const require = createRequire(__dirname)
