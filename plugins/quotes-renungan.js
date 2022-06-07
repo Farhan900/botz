@@ -1,5 +1,5 @@
 let handler = async(m, { conn }) => {
-	conn.sendFile(m.chat, pickRandom(renungan), 'renungan.jpg', author, '', m)
+	conn.sendButton(m.chat, author, author, pickRandom(renungan), ['Get again', '/renungan'], m)
 }
 handler.help = ['renungan']
 handler.tags = ['quotes']
