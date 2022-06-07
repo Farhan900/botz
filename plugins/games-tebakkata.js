@@ -11,7 +11,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     }
     const json = await tebakkata()
     let caption = `
-Soal: ${json.soal}
+${json.soal}
 
 Timeout *${(timeout / 1000).toFixed(2)} detik*
 Ketik ${usedPrefix}teka untuk bantuan
@@ -21,7 +21,7 @@ Bonus: ${poin} XP
         await conn.sendButton(m.chat, caption, author, ['Bantuan', `${usedPrefix}teka`], m),
         json, poin,
         setTimeout(() => {
-            if (conn.tebakkata[id]) conn.sendButton(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, author, ['Main Lagi', `${usedPrefix}tebakkata`], conn.tebakkata[id][0])
+            if (conn.tebakkata[id]) conn.sendButton(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, author, ['Tebak Kata', `${usedPrefix}tebakkata`], conn.tebakkata[id][0])
             delete conn.tebakkata[id]
         }, timeout)
     ]
