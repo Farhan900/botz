@@ -12,11 +12,11 @@ let handler = async (m, { conn, usedPrefix }) => {
     const json = await tebakkabupaten()
     let caption = `
 Timeout *${(timeout / 1000).toFixed(2)} detik*
-Ketik ${usedPrefix}hint untuk bantuan
+Ketik ${usedPrefix}bakbu untuk bantuan
 Bonus: ${poin} XP
 `.trim()
     conn.tebakkabupaten[id] = [
-        await conn.sendButton(m.chat, caption, author, json.url, ['Bantuan', `${usedPrefix}hint`], m),
+        await conn.sendButton(m.chat, caption, author, json.url, ['Bantuan', `${usedPrefix}bakbu`], m),
         json, poin,
         setTimeout(() => {
             if (conn.tebakkabupaten[id]) conn.sendButton(m.chat, `Waktu habis!\nJawabannya adalah *${json.title}*`, author, ['Tebak Kabupaten', '/tebakkabupaten'], conn.tebakkabupaten[id][0])

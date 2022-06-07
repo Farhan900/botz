@@ -7,7 +7,7 @@ let handler = async (m, { conn }) => {
     let clue = ans.replace(/[bcdfghjklmnpqrstvwxyz]/ig, '_')
     m.reply('```' + clue + '```')
 }
-handler.command = /^hint$/i
+handler.command = /^ao$/i
 
 handler.limit = true
 

@@ -3,7 +3,7 @@ const threshold = 0.72
 let handler = m => m
 handler.before = async function (m) {
     let id = m.chat
-    if (!m.quoted || !m.quoted.fromMe || !m.quoted.isBaileys || !m.text || !/Ketik.*(hint)/i.test(m.quoted.text) || /.*(hint)/i.test(m.text)) return !0
+    if (!m.quoted || !m.quoted.fromMe || !m.quoted.isBaileys || !m.text || !/Ketik.*(tebak)/i.test(m.quoted.text) || /.*(tebak)/i.test(m.text)) return !0
     this.tebaktebakan = this.tebaktebakan ? this.tebaktebakan : {}
     if (!(id in this.tebaktebakan)) return conn.sendButton(m.chat, 'Soal itu telah berakhir', author, ['Tebak Tebakan', '/tebaktebakan'], m)
     if (m.quoted.id == this.tebaktebakan[id][0].id) {

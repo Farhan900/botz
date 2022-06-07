@@ -7,7 +7,7 @@ let handler = async (m, { conn }) => {
     let clue = ans.replace(/[AIUEO]/gi, '_')
     m.reply('```' + clue + '```')
 }
-handler.command = /^hint$/i
+handler.command = /^teka$/i
 
 handler.limit = true
 
