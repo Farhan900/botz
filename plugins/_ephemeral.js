@@ -1,9 +1,9 @@
-import { WA_MESSAGE_STUB_TYPE } from '@adiwajshing/baileys'
+import { WAMessageStubType } from '@adiwajshing/baileys'
 
 export function all(m, chatUpdate) {
     let chat = global.db.data.chats[chatUpdate.jid]
     switch (m.messageStubType) {
-      case WA_MESSAGE_STUB_TYPE.CHANGE_EPHEMERAL_SETTING:
+      case WAMessageStubType.CHANGE_EPHEMERAL_SETTING:
         if (chat.detect)
           this.sendMessage(chatUpdate.jid, +m.messageStubParameters[0] ?
             'Pesan Sementara ON' :

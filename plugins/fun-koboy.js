@@ -52,7 +52,7 @@ let handler = (m, { conn, usedPrefix, command, text }) => {
 
     let pos = conn.tembak.musuh.join(" ") + "\n\n\n" + conn.tembak.tembak.join(" ")
 
-    conn.deleteMessage(chat, { fromMe, id, remoteJid: chat })
+    conn.sendMessage(chat, { delete: fromMe, id, remoteJid: chat })
 
     if(conn.tembak.musuh.indexOf("🥷") === conn.tembak.tembak.indexOf("🤠")) return conn.sendButton(m.chat, pos, author, ["Tembak", `${usedPrefix}${command} tembak`], m)
     return conn.sendButton(m.chat, pos, author, [["←", `${usedPrefix}${command} kiri`], ["→", `${usedPrefix}${command} kanan`]], m)
@@ -63,7 +63,7 @@ let handler = (m, { conn, usedPrefix, command, text }) => {
       global.DATABASE.data.users[m.sender].money += 1000
       m.reply("Kamu menang!\n\nUang += 1000")
     }
-    conn.deleteMessage(chat, { fromMe, id, remoteJid: chat })
+    conn.sendMessage(chat, { delete: fromMe, id, remoteJid: chat })
   } else {
     const randMusuh = [
       ["🥷", "-", "-", "-", "-"],
