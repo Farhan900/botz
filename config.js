@@ -16,13 +16,15 @@ global.APIs = { // API Prefix
   bg: 'http://bochil.ddns.net',
   xteam: 'https://api.xteam.xyz',
   zahir: 'https://zahirr-web.herokuapp.com',
-  zenz: 'https://zenzapis.xyz'
+  zenz: 'https://zenzapis.xyz',
+  neoxr: 'https://api.neoxr.my.id'
 }
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
   'https://api.xteam.xyz': '5c6d619139643153',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
-  'https://zenzapis.xyz': '01a0d20fe0'
+  'https://zenzapis.xyz': '01a0d20fe0',
+  'https://api.neoxr.my.id': 'uaINCCO2'
 }
 
 // Sticker WM
