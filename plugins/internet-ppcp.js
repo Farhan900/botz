@@ -7,7 +7,7 @@ conn.sendButton(m.chat, 'Cowoknya', author, json.result.male, ['Get again', '/pp
 conn.sendButton(m.chat, 'Ceweknya', author, json.result.female, ['Get again', '/ppcp'], m)
 }
 handler.help = ['ppcouple', 'ppcp']
-handler.tags = ['internet', 'anime']
+handler.tags = ['internet', 'image']
 
 handler.command = /^(pp(cp|couple))$/i
 handler.limit = true

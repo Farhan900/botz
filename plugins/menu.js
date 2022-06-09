@@ -24,6 +24,7 @@ let tags = {
   'owner': 'Owner',
   'info': 'Info',
   'audio': 'Audio',
+  'image': 'Image',
   '': 'No Category',
 }
 const defaultMenu = {
