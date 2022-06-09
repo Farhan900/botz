@@ -9,7 +9,6 @@ let tags = {
   'sticker': 'Sticker',
   'kerang': 'Kerang Ajaib',
   'quotes': 'Quotes',
-  'image': 'Image',
   'group': 'Group',
   'premium': 'Premium',
   'internet': 'Internet',
@@ -23,9 +22,7 @@ let tags = {
   'absen': 'Absen',
   'quran': 'Islami',
   'owner': 'Owner',
-  'advanced': 'Advanced',
   'info': 'Info',
-  'maker': 'Maker',
   'audio': 'Audio',
   '': 'No Category',
 }
@@ -44,8 +41,6 @@ const defaultMenu = {
 📈 Uptime: *%uptime (%muptime)*
 📊 Database: %rtotalreg of %totalreg
 
-🌐 Website: jayaganz-api.herokuapp.com
-
 Untuk melihat menu
 Silakan klik baca selengkapnya
 Dibawah ini ↓
@@ -56,6 +51,19 @@ Dibawah ini ↓
   after: `
 *%npmname* | %version
 ${'```%npmdesc```'}
+
+*Info!*
+Tanda <>, (), []
+Tidak dituliskan dalam perintah!
+
+Jika ingin menggunakan fitur wajib seperti ini!
+
+Perintah di menu: #ig <url>
+Yang harus kamu perintahkan:
+#ig https://www.instagram.com/p/BmjK1KOD_UG/?utm_medium=copy_link
+
+_Jika pencaharian saat kamu cari tidak ada cobalah cek format apakah benar_
+*Jika masih error harap lapor fitur ke owner*
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
