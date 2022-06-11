@@ -7,9 +7,9 @@ handler.before = async (m) => {
     if (chat.simi && !chat.isBanned) {
         if (/^.*false|disable|(turn)?off|0/i.test(m.text)) return
         if (!m.text) return
-        let anu = await fetch(`https://api.simsimi.net/v2/?text=${text}&lc=id`)
+        let res = await fetch(global.API('xteam', '/simisimi', { kata: text }, 'APIKEY'))
 	    let json = await res.json()
-	    m.reply('Simi: ' + anu.result.success)
+	    m.reply('Simi: ' + json.jawaban)
         return !0
     }
     return !0

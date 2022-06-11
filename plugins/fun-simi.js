@@ -1,9 +1,9 @@
 import fetch from 'node-fetch'
 let handler = async(m, { conn, text }) => {
 	if (!text) throw 'Masukan text!'
-	let anu = await fetch(`https://api.simsimi.net/v2/?text=${text}&lc=id`)
+	let res = await fetch(global.API('xteam', '/simisimi', { kata: text }, 'APIKEY'))
 	let json = await res.json()
-	m.reply(anu.result.success)
+	m.reply('Simi: ' + json.jawaban)
 }
 handler.help = ['simi']
 handler.tags = ['fun']
