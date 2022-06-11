@@ -9,7 +9,7 @@ global.owner = [
   // [number, dia creator/owner?, dia developer?]
 ] // Put your number here
 global.mods = [] // Want some help?
-global.prems = ['6288296620382'] // Premium user has unlimited limit
+global.prems = [] // Premium user has unlimited limit
 global.APIs = { // API Prefix
   // name: 'https://website'
   nrtm: 'https://nurutomo.herokuapp.com',
@@ -28,8 +28,8 @@ global.APIKeys = { // APIKey Here
 }
 
 // Sticker WM
-global.packname = 'HurvyBotz-Md'
-global.author = 'Powered By Hurvybotz'
+global.packname = 'ClevvBotz-Md'
+global.author = 'Powered By ClevvBotz'
 
 global.multiplier = 69 // The higher, The harder levelup
 
