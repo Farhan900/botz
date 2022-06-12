@@ -5,11 +5,13 @@ let handler = async (m, { conn, args }) => {
     if (/image/.test(mime)) {
         let img = await q.download()
         if (!img) throw `Foto tidak ditemukan`
-        conn.updateProfilePicture(bot, img)
+        await hisoka.updateProfilePicture(bot, { url: img })
         conn.reply(m.chat, 'Sukses Mengganti Foto Profile Bot!', m)
     }
 }
 handler.help = ['setbotpp']
+handler.tags = ['owner']
+
 handler.command = /^(setbotpp)$/i
 handler.owner = true
 
