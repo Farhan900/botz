@@ -8,7 +8,7 @@ let handler = async (m, { conn}) => {
   conn.sendFile(m.chat, url, 'nyan.webp', '', m, false, { asSticker: true })
 }
 handler.help = ['nyan']
-handler.tags = ['expression']
+handler.tags = ['sticker']
 handler.command = /^nyan/i
 
 export default handler
