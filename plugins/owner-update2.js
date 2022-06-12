@@ -4,7 +4,7 @@ import { promisify } from 'util'
 import { join } from 'path'
 
 let confirmation = {}
-let repository = 'Nurutomo/wabot-aq'
+let repository = 'Jayaganz26/wa-bot'
 let branch = 'master'
 
 export async function handler(m, { text }) {
