@@ -1,5 +1,5 @@
 import { promises } from 'fs'
-import fs from 'fs'
+import 'fs' from 'fs'
 import { join } from 'path'
 import { xpRange } from '../lib/levelling.js'
 let tags = {
