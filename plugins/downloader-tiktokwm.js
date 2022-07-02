@@ -10,6 +10,6 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 handler.help = ['tiktokwm'].map(v => v + ' <url>')
 handler.tags = ['downloader']
 
-handler.command = /^(tik(tok)?(wm)?)$/i
+handler.command = /^(tiktokwm)$/i
 
 export default handler
