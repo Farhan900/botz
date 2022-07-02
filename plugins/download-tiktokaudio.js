@@ -8,6 +8,6 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 handler.help = ['tiktokaudio', 'tiktokmp3'].map(v => v + ' <url>')
 handler.tags = ['downloader']
 
-handler.command = /^(tik(tok)?(audio|mp3)?)$/i
+handler.command = /^(tiktokaudio|tiktokmp3)$/i
 
 export default handler
