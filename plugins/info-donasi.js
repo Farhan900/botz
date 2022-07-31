@@ -1,11 +1,7 @@
 let handler =  m => m.reply(`
 Donasi • Pulsa
-~> 3 [089524664142]
-~> Telkomsel [082339922441]
-
-Donasi • Non Pulsa
-~> Dana [089524664142]
-~> Gopay [089524664142]
+~> *ALL PAYMENT [+62 882-0064-85504]
+~> [+62 882-0064-85504]
 `.trim()) // Tambah sendiri kalo mau
 handler.help = ['donasi']
 handler.tags = ['info']
